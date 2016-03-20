@@ -2,23 +2,27 @@ html
   head
     title Annotation Interface
     style.
-      .chapter__loading, .save__loading, .save__button {
-        display: none;
+      .chapter__loading, .save__loading {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
       }
 
   body
     section.controls
-      div.controls__loading Loading chapters...
-      div.controls__previous
-      div#chapterControl
-      div.controls__next
+      div.controls__container
+        div.controls__loading Loading chapters...
+        div.controls__previous
+        div.controls__current
+        div.controls__next
 
     section.chapter
       div.chapter__loading Loading chapter...
-      div.chapter__text#chapterText
+      div.chapter__text
 
     section.save
       div.save__loading Loading chapter...
       input.save__button(type="button", value="Save")
 
     script(src="client.js")
+    link(rel="stylesheet", href="styles.css")

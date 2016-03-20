@@ -14,7 +14,8 @@ const updateChapters = (chapters) => {
     loadChapter(this.value);
   });
 
-  document.getElementById('chapterControl').appendChild(chaptersList);
+  document.getElementsByClassName('controls__current')[0].appendChild(chaptersList);
+  document.getElementsByClassName('controls__loading')[0].classList.add('controls__loading--loaded');
 };
 
 const loadChapters = () => {
@@ -24,7 +25,7 @@ const loadChapters = () => {
 };
 
 const displayChapter = (chapter) => {
-  document.getElementById('chapterText').innerHTML = chapter.text;
+  document.getElementsByClassName('chapter__text')[0].innerHTML = chapter.text.replace(/(?:\n\n)/g, '<br /><br />');
 };
 
 const loadChapter = (chapter) => {
