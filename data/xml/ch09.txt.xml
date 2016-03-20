@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<document DOCID="ch09.txt">
+  <span category="PERSON">
+    <extent>
+      <charseq END="85" START="75">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="174" START="170">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="365" START="357">a duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="896" START="886">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1177" START="1173">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1234" START="1224">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1360" START="1356">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1430" START="1420">the
+duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1784" START="1774">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1896" START="1892">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2025" START="2015">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2245" START="2241">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2349" START="2339">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2491" START="2487">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2599" START="2589">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2735" START="2731">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2782" START="2772">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2869" START="2865">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2907" START="2897">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2959" START="2955">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3121" START="3117">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3266" START="3255">the duchess;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3618" START="3614">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3771" START="3761">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3873" START="3869">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3924" START="3914">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4022" START="4018">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4154" START="4144">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4241" START="4237">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4344" START="4334">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4561" START="4557">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4709" START="4699">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4928" START="4918">the duchess</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5025" START="5021">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5036" START="5032">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5579" START="5568">the soldiers</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5671" START="5649">the end of half an hour</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5741" START="5734">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5763" START="5759">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5878" START="5874">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5934" START="5930">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6091" START="6087">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6199" START="6195">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6576" START="6568">the queen</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6748" START="6744">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6778" START="6774">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7066" START="7063">fun!</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7147" START="7143">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7303" START="7299">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7541" START="7537">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8188" START="8184">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8554" START="8550">alice</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="8879" START="8872">the
+sea.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8999" START="8995">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9260" START="9256">alice</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="9300" START="9291">the earth.</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="9463" START="9457">the sea</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9628" START="9624">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9791" START="9787">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9908" START="9904">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10007" START="10003">alice</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="10160" START="10142">the end of the bill</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10247" START="10243">alice</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="10281" START="10275">the sea</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10418" START="10414">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10637" START="10633">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10828" START="10824">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10985" START="10981">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="11320" START="11304">an old conger-eel</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="11445" START="11441">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="11648" START="11638">an old crab</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="11939" START="11935">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="12092" START="12088">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="12235" START="12231">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="12280" START="12262">a little
+before she</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="12443" START="12439">alice</charseq>
+    </extent>
+  </span>
+  </document>

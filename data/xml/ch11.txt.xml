@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<document DOCID="ch11.txt">
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="27" START="13">queen of hearts</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="278" START="269">guard
+him;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="296" START="289">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="317" START="302">the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="507" START="503">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="739" START="735">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="925" START="917">the judge</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="987" START="979">the judge</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1014" START="1006">the king;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1227" START="1223">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1359" START="1355">birds</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1602" START="1595">jury-men</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1721" START="1717">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="1974" START="1970">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2054" START="2039">the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="2088" START="2079">the court!</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2102" START="2095">the
+king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2188" START="2184">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2531" START="2527">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2601" START="2597">alice</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="2647" START="2639">the court</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2770" START="2750">the poor little juror</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="2783" START="2780">bill</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3059" START="3051">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3085" START="3065">this the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3207" START="3189">the queen of hearts</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="3280" START="3262">the knave of hearts</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3371" START="3364">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3389" START="3381">the jury.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3421" START="3412">the rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3528" START="3520">the king;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3549" START="3534">the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="3901" START="3893">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4174" START="4167">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4191" START="4184">the jury</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4205" START="4198">the jury</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4359" START="4352">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4434" START="4427">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4465" START="4458">the jury</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="4748" START="4740">the king;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5059" START="5055">alice</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="5255" START="5246">the court;</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5402" START="5391">the dormouse</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5487" START="5483">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5602" START="5598">alice</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="5816" START="5807">the court.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="5960" START="5942">one of the officers</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6138" START="6131">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6472" START="6464">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6572" START="6565">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="6876" START="6869">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7141" START="7116">some more bread-and-butter</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7194" START="7180">one of the jury</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7284" START="7277">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7492" START="7484">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7521" START="7500">one of the guinea-pigs</charseq>
+    </extent>
+  </span>
+  <span category="ORGANIZATION">
+    <extent>
+      <charseq END="7591" START="7582">the court.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="7858" START="7854">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8252" START="8245">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8355" START="8341">the guinea-pigs</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8371" START="8367">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8549" START="8542">the king</charseq>
+    </extent>
+  </span>
+  <span category="LOCATION">
+    <extent>
+      <charseq END="8672" START="8666">outside</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8713" START="8695">one of the
+officers</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8829" START="8821">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="8921" START="8917">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9079" START="9071">the king.</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9086" START="9083">shan</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9152" START="9137">the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9263" START="9256">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9549" START="9541">the queen</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9854" START="9847">the king</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="9951" START="9943">the queen</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10052" START="10048">alice</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10077" START="10062">the white rabbit</charseq>
+    </extent>
+  </span>
+  <span category="PERSON">
+    <extent>
+      <charseq END="10280" START="10265">the white rabbit</charseq>
+    </extent>
+  </span>
+  </document>

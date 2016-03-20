@@ -1,15 +1,24 @@
 html
   head
     title Annotation Interface
+    style.
+      .chapter__loading, .save__loading, .save__button {
+        display: none;
+      }
 
   body
     section.controls
+      div.controls__loading Loading chapters...
       div.controls__previous
-      div.controls__current
+      div#chapterControl
       div.controls__next
 
     section.chapter
-      div.chapter__text
+      div.chapter__loading Loading chapter...
+      div.chapter__text#chapterText
 
     section.save
-      input(type="button", value="Save")
+      div.save__loading Loading chapter...
+      input.save__button(type="button", value="Save")
+
+    script(src="client.js")
