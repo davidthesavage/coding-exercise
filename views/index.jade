@@ -2,7 +2,7 @@ html
   head
     title Annotation Interface
     style.
-      .chapter__loading, .save__loading {
+      .chapter__loading, .save__loading, .annotateControls {
         position: absolute;
         opacity: 0;
         z-index: -1;
@@ -23,6 +23,11 @@ html
     section.save
       div.save__loading Loading chapter...
       input.save__button(type="button", value="Save")
+
+    section.annotateControls#annotateControls
+      input#personRadio(type="radio", value="person", name="annotate")
+      input#locationRadio(type="radio", value="location", name="annotate")
+      input#organizationRadio(type="radio", value="organization", name="annotate")
 
     script(src="client.js")
     link(rel="stylesheet", href="styles.css")
