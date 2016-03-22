@@ -1727,7 +1727,7 @@
 
 	  // Ensure we have characters selected
 	  if (!selection.isCollapsed) {
-	    // snapSelectionToWord(selection);
+	    (0, _utils.snapSelectionToWord)(selection);
 
 	    var updatedSelection = window.getSelection(),
 	        offsets = (0, _utils.getOffsetsFromSelection)(updatedSelection, chapterTextNode);

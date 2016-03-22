@@ -19,7 +19,7 @@ export function selectAnnotation() {
 
   // Ensure we have characters selected
   if (!selection.isCollapsed) {
-    // snapSelectionToWord(selection);
+    snapSelectionToWord(selection);
 
     const updatedSelection = window.getSelection(),
           offsets = getOffsetsFromSelection(updatedSelection, chapterTextNode);
