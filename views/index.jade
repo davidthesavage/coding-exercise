@@ -25,9 +25,9 @@ html
       input.save__button(type="button", value="Save")
 
     section.annotateControls#annotateControls
-      input#personRadio(type="radio", value="person", name="annotate", onchange="updateAnnotation('person')")
-      input#locationRadio(type="radio", value="location", name="annotate", onchange="updateAnnotation('location')")
-      input#organizationRadio(type="radio", value="organization", name="annotate", onchange="updateAnnotation('organization')")
+      input#personRadio(type="radio", value="person", name="annotate", onchange="updateAnnotation('person')", data-category="person")
+      input#locationRadio(type="radio", value="location", name="annotate", onchange="updateAnnotation('location')", data-category="location")
+      input#organizationRadio(type="radio", value="organization", name="annotate", onchange="updateAnnotation('organization')", data-category="organization")
 
     script(src="client.js")
     link(rel="stylesheet", href="styles.css")

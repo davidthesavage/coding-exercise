@@ -1,3 +1,5 @@
+import { snapSelectionToWord, getOffsetsFromSelection } from './utils';
+
 let currentChapter, chapterTextNode;
 
 const sortAnnotations = (annotations) => {
@@ -11,33 +13,6 @@ export function setChapter(chapter, chapterNode) {
   chapterTextNode = chapterNode;
 };
 
-const snapSelectionToWord = (selection) => {
-  // Detect if selection is backwards
-  const tmpRange = document.createRange();
-  tmpRange.setStart(selection.anchorNode, selection.anchorOffset);
-  tmpRange.setEnd(selection.focusNode, selection.focusOffset);
-
-  const backwards = tmpRange.collapsed;
-  tmpRange.detach();
-
-  // modify() works on the focus of the selectionection
-  const endNode = selection.focusNode, endOffset = selection.focusOffset;
-  selection.collapse(selection.anchorNode, selection.anchorOffset);
-
-  let direction = [];
-  if (backwards) {
-      direction = ['backward', 'forward'];
-  } else {
-      direction = ['forward', 'backward'];
-  }
-
-  selection.modify("move", direction[0], "character");
-  selection.modify("move", direction[1], "word");
-  selection.extend(endNode, endOffset);
-  selection.modify("extend", direction[1], "character");
-  selection.modify("extend", direction[0], "word");
-};
-
 export function selectAnnotation() {
   let start = 0;
   const selection = window.getSelection();
@@ -45,32 +20,52 @@ export function selectAnnotation() {
   // Ensure we have characters selected
   if (!selection.isCollapsed) {
     snapSelectionToWord(selection);
-    const updatedSelection = window.getSelection();
 
-    const range = updatedSelection.getRangeAt(0),
-          selected = range.toString().length,
-          preCaretRange = range.cloneRange();
+    const updatedSelection = window.getSelection(),
+          offsets = getOffsetsFromSelection(updatedSelection, chapterTextNode);
 
-    preCaretRange.selectNodeContents(chapterTextNode);
-    preCaretRange.setEnd(range.endContainer, range.endOffset);
+    currentChapter.annotations.push({
+      category: 'uncategorized',
+      start: offsets.start,
+      end: offsets.end
+    });
 
-    // Clean out whitespace that might be added by spans from other annotations
-    const rangeString = preCaretRange.toString().replace(/\s{2,}/g,' ');
-
-    // Adjust for browser adding characters to length from selected
-    if (selected) {
-      start = rangeString.length - selected;
-    } else {
-      start = rangeString.length;
-    }
-
-    const end = (range.endOffset - range.startOffset) + start - 1;
-
-    currentChapter.annotations.push({ category: 'uncategorized', start, end });
     chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
   }
 };
 
+export function applyAnnotations(annotations, chapter) {
+  let lastSliceEnd = 0,
+      text = chapter.text,
+      formattedText = '';
+
+  // This methodology requires that annotations be iterated in sequential order
+  annotations = sortAnnotations(annotations);
+
+  annotations.forEach((annotation, index) => {
+    // If we aren't slicing exactly from where we finished the last slice, we need to get all the text in between and not format it
+    if (annotation.start !== lastSliceEnd) {
+      formattedText += text.slice(lastSliceEnd, annotation.start);
+    }
+
+    // Have to add 1 as slice is 0 index based
+    const annotationEnd = annotation.end + 1;
+
+    // Wrap the annotation in a span that provides styling and hover events
+    formattedText += `<span class="annotation" onmouseover="showEditControls(event, this, ${index})" onmouseout="hideEditControlsTimeout(event)"><span class="annotation__tag annotation__tag--${annotation.category}">${text.slice(annotation.start, annotationEnd)}</span><span class="annotation__remove" onclick="removeAnnotation(event, ${index})"></span></span>`;
+
+    lastSliceEnd = annotationEnd;
+  });
+
+  // When done applying all annotations, we need to ensure we include any text after the last annotation
+  if (lastSliceEnd < text.length) {
+    formattedText += text.slice(lastSliceEnd)
+  }
+
+  return formattedText;
+};
+
+// Setup annotation event listeners
 export function initializeAnnotateControls() {
   const annotateControls = document.getElementById('annotateControls');
   let timeout, annotationIndex, currentAnnotation;
@@ -80,6 +75,13 @@ export function initializeAnnotateControls() {
     // Clear any existing timeout that would hide the edit controls
     if (timeout) {
       clearTimeout(timeout);
+    }
+
+    const activeAnnotation = currentChapter.annotations[index];
+
+    // Select the correct radio button if the active annotation is categorized
+    if (activeAnnotation.category !== 'uncategorized') {
+      document.querySelector(`[data-category="${activeAnnotation.category}"`).checked = true;
     }
 
     const bodyRect = document.body.getBoundingClientRect(),
@@ -114,6 +116,9 @@ export function initializeAnnotateControls() {
   window.updateAnnotation = (category) => {
     currentChapter.annotations[annotationIndex].category = category;
     hideEditControls();
+
+    // Make sure all radio buttons are unchecked after selecting
+    [].forEach.call(annotateControls.querySelectorAll('input[type="radio"]'), (radio) => { radio.checked = false; });
     chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
   };
 
@@ -126,38 +131,4 @@ export function initializeAnnotateControls() {
 
   annotateControls.addEventListener('mouseover', (event) => { window.showEditControls(event, currentAnnotation, annotationIndex) });
   annotateControls.addEventListener('mouseout', window.hideEditControlsTimeout);
-};
-
-export function applyAnnotations(annotations, chapter) {
-  let lastSliceEnd = 0,
-      text = chapter.text,
-      formattedText = '';
-
-  // This methodology requires that annotations be iterated in sequential order
-  annotations = sortAnnotations(annotations);
-
-  annotations.forEach((annotation, index) => {
-    // If we aren't slicing exactly from where we finished the last slice, we need to get all the text in between and not format it
-    if (annotation.start !== lastSliceEnd) {
-      formattedText += text.slice(lastSliceEnd, annotation.start);
-    }
-
-    // Have to add 1 as slice is 0 index based
-    const annotationEnd = annotation.end + 1;
-
-    // Wrap the annotation in a span that provides styling and hover events
-    formattedText += `<span class="annotation" onmouseover="showEditControls(event, this, ${index})" onmouseout="hideEditControlsTimeout(event)">
-      <span class="annotation__tag annotation__tag--${annotation.category}">${text.slice(annotation.start, annotationEnd)}</span>
-      <span class="annotation__remove" onclick="removeAnnotation(event, ${index})"></span>
-    </span>`;
-
-    lastSliceEnd = annotationEnd;
-  });
-
-  // When done applying all annotations, we need to ensure we include any text after the last annotation
-  if (lastSliceEnd < text.length) {
-    formattedText += text.slice(lastSliceEnd)
-  }
-
-  return formattedText;
 };
