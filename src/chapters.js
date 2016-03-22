@@ -51,6 +51,24 @@ export function loadChapters() {
   chapterTextNode.addEventListener('mouseup', selectAnnotation);
   initializeAnnotateControls();
 
+  // Display all loaded chapters annotations in the console
+  document.getElementById('saveButton').addEventListener('click', () => {
+    console.log('******************');
+    console.log('Saving Annotations');
+    console.log('******************');
+
+    for (let number in chapters) {
+      if (chapters.hasOwnProperty(number)) {
+        if (chapters[number].annotations.length) {
+          console.log(`Chapter ${number}`);
+          console.table(chapters[number].annotations);
+        } else {
+          console.log(`Chapter ${number} has no annotations yet`);
+        }
+      }
+    };
+  });
+
   return fetchChapters;
 };
 

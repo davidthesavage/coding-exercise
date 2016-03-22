@@ -19,7 +19,7 @@ export function selectAnnotation() {
 
   // Ensure we have characters selected
   if (!selection.isCollapsed) {
-    snapSelectionToWord(selection);
+    // snapSelectionToWord(selection);
 
     const updatedSelection = window.getSelection(),
           offsets = getOffsetsFromSelection(updatedSelection, chapterTextNode);
@@ -80,6 +80,8 @@ export function initializeAnnotateControls() {
     const activeAnnotation = currentChapter.annotations[index];
 
     // Select the correct radio button if the active annotation is categorized
+    [].forEach.call(annotateControls.querySelectorAll('input[type="radio"]'), (radio) => { radio.checked = false; });
+
     if (activeAnnotation.category !== 'uncategorized') {
       document.querySelector(`[data-category="${activeAnnotation.category}"`).checked = true;
     }
@@ -116,9 +118,6 @@ export function initializeAnnotateControls() {
   window.updateAnnotation = (category) => {
     currentChapter.annotations[annotationIndex].category = category;
     hideEditControls();
-
-    // Make sure all radio buttons are unchecked after selecting
-    [].forEach.call(annotateControls.querySelectorAll('input[type="radio"]'), (radio) => { radio.checked = false; });
     chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
   };
 

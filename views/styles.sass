@@ -1,6 +1,7 @@
-$personColor: blue
-$locationColor: red
-$organizationColor: green
+$headerColor: wheat
+$personColor: #FFB835
+$locationColor: #3391E5
+$organizationColor: #64B243
 $uncategorizedColor: gray
 
 html, body
@@ -9,11 +10,15 @@ html, body
   font:
     family: sans-serif
     size: 2vw
-  line-height: 1.6
+  line-height: 2.6
 
 .controls
   border-bottom: 2px solid black
   min-height: 30px
+  position: fixed
+  width: 100%
+  background: $headerColor
+  padding: 1vw 0
 
   &__container
     max-width: 500px
@@ -25,23 +30,42 @@ html, body
       display: none
 
 .chapter
-  padding: 2vw 4vw
+  padding: 7vw 4vw 4vw
 
 .annotation
   position: relative
 
   &__tag
+    &:after
+      font-size: 10px
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      top: 14px
+
     &--person
       background-color: $personColor
+
+      &:after
+        content: 'Person'
 
     &--location
       background-color: $locationColor
 
+      &:after
+        content: 'Location'
+
     &--organization
       background-color: $organizationColor
 
+      &:after
+        content: 'Organization'
+
     &--uncategorized
       background-color: $uncategorizedColor
+
+      &:after
+        content: 'Uncategorized'
 
   &__remove
     opacity: 0
@@ -54,10 +78,81 @@ html, body
     z-index: 10
 
 .annotateControls
-  padding: 1vw
-  padding-left: 0
+  padding: 1vw 0
+  background: white
+  border-radius: 4px
+  border: 1px solid gray
+
+  &__control
+    margin-top: 10px
+    cursor: pointer
+
+    &:first-child
+      margin-top: 0
+
+    span
+      display: inline-block
+      vertical-align: middle
+
+    &:hover
+      background-color: #d7d7d7
 
   &--active
     opacity: 1
     z-index: 5
+
+input[type=radio]
+  opacity: 0
+  z-index: -1
+  position: absolute
+
+label
+  cursor: pointer
+  display: block
+  padding-right: 20px
+
+label .icon
+  width: 25px
+  height: 25px
+  display: inline-block
+  border-radius: 60px
+  border: 2px solid gray
+  position: relative
+  margin:
+    left: 12px
+    right: 4px
+
+
+#personRadio:checked + label
+  color: $personColor
+
+#locationRadio:checked + label
+  color: $locationColor
+
+#organizationRadio:checked + label
+  color: $organizationColor
+
+label[for=personRadio] .icon
+  background:
+    image: url('images/person.svg')
+    color: $personColor
+
+label[for=locationRadio] .icon
+  background:
+    image: url('images/location.svg')
+    color: $locationColor
+
+label[for=organizationRadio] .icon
+  background:
+    image: url('images/organization.svg')
+    color: $organizationColor
+
+.save
+  position: fixed
+  bottom: 0
+  width: 100%
+  text-align: center
+  border-top: 2px solid black
+  padding: 2vw 0
+  background: $headerColor
 

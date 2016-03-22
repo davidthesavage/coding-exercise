@@ -22,12 +22,26 @@ html
 
     section.save
       div.save__loading Loading chapter...
-      input.save__button(type="button", value="Save")
+      input.save__button#saveButton(type="button", value="Save")
 
     section.annotateControls#annotateControls
-      input#personRadio(type="radio", value="person", name="annotate", onchange="updateAnnotation('person')", data-category="person")
-      input#locationRadio(type="radio", value="location", name="annotate", onchange="updateAnnotation('location')", data-category="location")
-      input#organizationRadio(type="radio", value="organization", name="annotate", onchange="updateAnnotation('organization')", data-category="organization")
+      div.annotateControls__control
+        input#personRadio(type="radio", value="person", name="annotate", onchange="updateAnnotation('person')", data-category="person")
+        label(for="personRadio")
+          span.icon
+          span Person
+
+      div.annotateControls__control
+        input#locationRadio(type="radio", value="location", name="annotate", onchange="updateAnnotation('location')", data-category="location")
+        label(for="locationRadio")
+          span.icon
+          span Location
+
+      div.annotateControls__control
+        input#organizationRadio(type="radio", value="organization", name="annotate", onchange="updateAnnotation('organization')", data-category="organization")
+        label(for="organizationRadio")
+          span.icon
+          span Organization
 
     script(src="client.js")
     link(rel="stylesheet", href="styles.css")
