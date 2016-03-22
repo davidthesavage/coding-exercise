@@ -112,7 +112,7 @@ export function initializeAnnotateControls() {
       clearTimeout(timeout);
     }
 
-    timeout = setTimeout(hideEditControls, 1500);
+    timeout = setTimeout(hideEditControls, 800);
   };
 
   window.updateAnnotation = (category) => {

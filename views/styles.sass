@@ -9,7 +9,7 @@ html, body
   margin: 0
   font:
     family: sans-serif
-    size: 2vw
+    size: 19px
   line-height: 2.6
 
 .controls
@@ -18,7 +18,8 @@ html, body
   position: fixed
   width: 100%
   background: $headerColor
-  padding: 1vw 0
+  padding: 18px 0 10px
+  z-index: 50
 
   &__container
     max-width: 500px
@@ -30,7 +31,7 @@ html, body
       display: none
 
 .chapter
-  padding: 7vw 4vw 4vw
+  padding: 70px 30px 70px
 
 .annotation
   position: relative
@@ -71,7 +72,18 @@ html, body
     opacity: 0
     z-index: -1
     position: absolute
-    top: -1.69vw
+    top: -14px
+    background:
+      image: url('images/x.png')
+      repeat: no-repeat
+      size: cover
+      color: #d7d7d7
+    width: 17px
+    height: 17px
+    border-radius: 10px
+    left: 50%
+    transform: translateX(-50%)
+    cursor: pointer
 
   &:hover .annotation__remove
     opacity: 1
