@@ -1903,10 +1903,8 @@
 	    preCaretRange.selectNodeContents(element);
 	    preCaretRange.setEnd(range.endContainer, range.endOffset);
 
-	    // Clean out whitespace that might be added by spans from other annotations
-	    var rangeString = preCaretRange.toString().replace(/\s{2,}/g, ' ');
-
 	    // Adjust for browser adding characters to length from selected
+	    var rangeString = preCaretRange.toString();
 	    var start = selected ? rangeString.length - selected : rangeString.length;
 	    var end = range.endOffset - range.startOffset + start - 1;
 
