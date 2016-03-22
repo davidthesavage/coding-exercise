@@ -1,6 +1,7 @@
 $personColor: blue
 $locationColor: red
 $organizationColor: green
+$uncategorizedColor: gray
 
 html, body
   padding: 0
@@ -27,11 +28,41 @@ html, body
   padding: 2vw 4vw
 
 .annotation
-  &--person
-    background-color: $personColor
+  position: relative
+  font-size: 0
 
-  &--location
-    background-color: $locationColor
+  &__tag
+    font-size: 2vw
 
-  &--organization
-    background-color: $organizationColor
+    &--person
+      background-color: $personColor
+
+    &--location
+      background-color: $locationColor
+
+    &--organization
+      background-color: $organizationColor
+
+    &--uncategorized
+      background-color: $uncategorizedColor
+
+  &__remove
+    font-size: 2vw
+    content: 'X'
+    opacity: 0
+    z-index: -1
+    position: absolute
+    top: -1.69vw
+
+  &:hover .annotation__remove
+    opacity: 1
+    z-index: 10
+
+.annotateControls
+  padding: 1vw
+  padding-left: 0
+
+  &--active
+    opacity: 1
+    z-index: 5
+

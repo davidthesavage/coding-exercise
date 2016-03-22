@@ -11,6 +11,10 @@
 
 `npm run dev`
 
-## Run in production mode
+## Run in production mode (TODO)
 
 `npm run prod`
+
+## Running list of TODOS
+
+1.

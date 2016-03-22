@@ -1,14 +1,96 @@
+let currentChapter, chapterTextNode;
+
 const sortAnnotations = (annotations) => {
   return annotations.sort((a, b) => {
     return a.start - b.start;
   });
 };
 
-const addAnnotation = (selection, chapter) => {
-  if (selection.extentOffset - selection.anchorOffset > 0) {
-    chapter.annotations.push({ category: 'person', start: selection.anchorOffset, end: selection.extentOffset - 1 });
-    applyAnnotations(chapter.annotations, chapter);
+export function setChapter(chapter, chapterNode) {
+  currentChapter = chapter;
+  chapterTextNode = chapterNode;
+};
+
+export function selectAnnotation() {
+  let start = 0;
+  const selection = window.getSelection();
+
+  if (!selection.isCollapsed) {
+    const range = selection.getRangeAt(0),
+          selected = range.toString().length,
+          preCaretRange = range.cloneRange();
+
+    preCaretRange.selectNodeContents(chapterTextNode);
+    preCaretRange.setEnd(range.endContainer, range.endOffset);
+
+    if (selected) {
+      start = preCaretRange.toString().length - selected;
+    } else {
+      start = preCaretRange.toString().length;
+    }
+
+    const end = (range.endOffset - range.startOffset) + start - 1;
+
+    currentChapter.annotations.push({ category: 'uncategorized', start, end });
+    chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
   }
+};
+
+export function initializeAnnotateControls() {
+  const annotateControls = document.getElementById('annotateControls');
+  let timeout, annotationIndex, currentAnnotation;
+
+  // Add events to the window as these will be inacessible outside the module otherwise
+  window.showEditControls = (event, annotation, index) => {
+    // Clear any existing timeout that would hide the edit controls
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    const bodyRect = document.body.getBoundingClientRect(),
+          annotationRect = annotation.getBoundingClientRect(),
+
+          // Place the edit controls just below the annotation
+          offsetTop = (annotationRect.top - bodyRect.top) + annotationRect.height,
+          offsetLeft = annotationRect.left - bodyRect.left;
+
+    // Make the annotate controls visible and position them
+    annotateControls.classList.add('annotateControls--active');
+    annotateControls.style.left = `${offsetLeft}px`;
+    annotateControls.style.top = `${offsetTop}px`;
+
+    // Stateful variables to be used by other event listeners
+    annotationIndex = index;
+    currentAnnotation = annotation;
+  };
+
+  const hideEditControls = () => {
+    annotateControls.classList.remove('annotateControls--active');
+  };
+
+  window.hideEditControlsTimeout = (event) => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+
+    timeout = setTimeout(hideEditControls, 1500);
+  };
+
+  window.updateAnnotation = (category) => {
+    currentChapter.annotations[annotationIndex].category = category;
+    hideEditControls();
+    chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
+  };
+
+  window.removeAnnotation = (event, index) => {
+    event.preventDefault();
+    delete currentChapter.annotations[index];
+    hideEditControls();
+    chapterTextNode.innerHTML = applyAnnotations(currentChapter.annotations, currentChapter);
+  };
+
+  annotateControls.addEventListener('mouseover', (event) => { window.showEditControls(event, currentAnnotation, annotationIndex) });
+  annotateControls.addEventListener('mouseout', window.hideEditControlsTimeout);
 };
 
 export function applyAnnotations(annotations, chapter) {
@@ -16,16 +98,31 @@ export function applyAnnotations(annotations, chapter) {
       text = chapter.text,
       formattedText = '';
 
+  // This methodology requires that annotations be iterated in sequential order
   annotations = sortAnnotations(annotations);
 
-  annotations.forEach((annotation) => {
+  annotations.forEach((annotation, index) => {
+    // If we aren't slicing exactly from where we finished the last slice, we need to get all the text in between and not format it
     if (annotation.start !== lastSliceEnd) {
       formattedText += text.slice(lastSliceEnd, annotation.start);
     }
 
-    formattedText += `<span class="annotation annotation--${annotation.category.toLowerCase()}">${text.slice(annotation.start, annotation.end + 1)}</span>`;
-    lastSliceEnd = annotation.end + 1;
+    // Have to add 1 as slice is 0 index based
+    const annotationEnd = annotation.end + 1;
+
+    // Wrap the annotation in a span that provides styling and hover events
+    formattedText += `<span class="annotation" onmouseover="showEditControls(event, this, ${index})" onmouseout="hideEditControlsTimeout(event)">
+      <span class="annotation__tag annotation__tag--${annotation.category}">${text.slice(annotation.start, annotationEnd)}</span>
+      <span class="annotation__remove" onclick="removeAnnotation(event, ${index})">X</span>
+    </span>`;
+
+    lastSliceEnd = annotationEnd;
   });
+
+  // When done applying all annotations, we need to ensure we include any text after the last annotation
+  if (lastSliceEnd < text.length) {
+    formattedText += text.slice(lastSliceEnd)
+  }
 
   return formattedText;
 };

@@ -2,7 +2,7 @@ var express = require('express'),
     fs = require('fs'),
     config = require('./config'),
     parseXML = require('xml2js').parseString,
-    cleanXML = require('./cleanXML'),
+    utils = require('./utils'),
     app = express();
 
 // Set global view engine to jade and configure static asset folder
@@ -41,9 +41,6 @@ app.get('/chapter/:number', (req, res) => {
       return sendError(err, res);
     }
 
-    // Format two newlines in a row to be a <br /> to aid in readability
-    const formattedText = text.replace(/(?:\n\n)/g, '<br /><br />');
-
     // Load the annotation file (if it exists)
     // The callback will still be fired and annotations will be null if file is not present
     fs.readFile(`data/xml/ch${req.params.number}.txt.xml`, 'utf8', (error, annotations) => {
@@ -55,11 +52,11 @@ app.get('/chapter/:number', (req, res) => {
       // If we have annotations for this chapter, convert the XML to a useable JSON format and return with the chapter text
       if (annotations) {
         parseXML(annotations, (err, result) => {
-          annotations = cleanXML(result);
-          res.send({ text, formattedText, annotations });
+          annotations = utils.cleanXml(result);
+          res.send({ text, annotations, number: req.params.number });
         });
       } else {
-        res.send({ text, formattedText });
+        res.send({ text, number: req.params.number });
       }
     });
   });
