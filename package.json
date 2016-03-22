@@ -4,7 +4,8 @@
   "description": "Coding exercise for Digital Reasoning",
   "main": "server.js",
   "scripts": {
-    "dev": "concurrently --kill-others \"webpack --progress --colors --watch\" \"nodemon src/server.js\" \"grunt\""
+    "dev": "concurrently --kill-others \"webpack --progress --colors --watch\" \"nodemon src/server.js\" \"grunt\"",
+    "app": "node ./src/server.js"
   },
   "repository": {
     "type": "git",

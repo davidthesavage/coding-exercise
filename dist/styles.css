@@ -1,0 +1,125 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 2vw;
+  line-height: 2.6; }
+
+.controls {
+  border-bottom: 2px solid black;
+  min-height: 30px;
+  position: fixed;
+  width: 100%;
+  background: wheat;
+  padding: 1vw 0; }
+  .controls__container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center; }
+  .controls__loading--loaded {
+    display: none; }
+
+.chapter {
+  padding: 7vw 4vw 4vw; }
+
+.annotation {
+  position: relative; }
+  .annotation__tag:after {
+    font-size: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 14px; }
+  .annotation__tag--person {
+    background-color: #FFB835; }
+    .annotation__tag--person:after {
+      content: 'Person'; }
+  .annotation__tag--location {
+    background-color: #3391E5; }
+    .annotation__tag--location:after {
+      content: 'Location'; }
+  .annotation__tag--organization {
+    background-color: #64B243; }
+    .annotation__tag--organization:after {
+      content: 'Organization'; }
+  .annotation__tag--uncategorized {
+    background-color: gray; }
+    .annotation__tag--uncategorized:after {
+      content: 'Uncategorized'; }
+  .annotation__remove {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    top: -1.69vw; }
+  .annotation:hover .annotation__remove {
+    opacity: 1;
+    z-index: 10; }
+
+.annotateControls {
+  padding: 1vw 0;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid gray; }
+  .annotateControls__control {
+    margin-top: 10px;
+    cursor: pointer; }
+    .annotateControls__control:first-child {
+      margin-top: 0; }
+    .annotateControls__control span {
+      display: inline-block;
+      vertical-align: middle; }
+    .annotateControls__control:hover {
+      background-color: #d7d7d7; }
+  .annotateControls--active {
+    opacity: 1;
+    z-index: 5; }
+
+input[type=radio] {
+  opacity: 0;
+  z-index: -1;
+  position: absolute; }
+
+label {
+  cursor: pointer;
+  display: block;
+  padding-right: 20px; }
+
+label .icon {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 60px;
+  border: 2px solid gray;
+  position: relative;
+  margin-left: 12px;
+  margin-right: 4px; }
+
+#personRadio:checked + label {
+  color: #FFB835; }
+
+#locationRadio:checked + label {
+  color: #3391E5; }
+
+#organizationRadio:checked + label {
+  color: #64B243; }
+
+label[for=personRadio] .icon {
+  background-image: url("images/person.svg");
+  background-color: #FFB835; }
+
+label[for=locationRadio] .icon {
+  background-image: url("images/location.svg");
+  background-color: #3391E5; }
+
+label[for=organizationRadio] .icon {
+  background-image: url("images/organization.svg");
+  background-color: #64B243; }
+
+.save {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid black;
+  padding: 2vw 0;
+  background: wheat; }
