@@ -21,7 +21,9 @@ html, body {
     display: none; }
 
 .chapter {
-  padding: 70px 30px 70px; }
+  padding: 70px 30px 70px;
+  max-width: 800px;
+  margin: 0 auto; }
 
 .annotation {
   position: relative; }
